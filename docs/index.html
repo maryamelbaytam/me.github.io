@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Maryam El-Baytam</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Base styles */
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #f8f5e9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+            font-weight: normal;
+        }
+
+        nav ul li:first-child {
+            margin-right: 5px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px; /* Adds spacing between letters */
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Centering section headers */
+        .about-me h2,
+        .experience-skills h2 {
+            text-align: center;
+        }
+
+        /* Indent for paragraphs */
+        p {
+            text-indent: 2em;
+            text-align: center; /* Centering paragraphs */
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            font-size: 0.7em;
+            padding: 10px;
+            background-color: #f8f5e9;
+            margin-top: auto;
+            font-family: cursive;
+        }
+         /* Popup styles */
+         .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 400px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Overlay styles */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>MARYAM EL-BAYTAM |</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="about-me">
+            <h2>About Me</h2>
+            <p>I have always found immense joy in helping others, whether it's by making a significant impact or offering a small, everyday act of kindness. The ability to assist and support others is incredibly meaningful to me, as I believe every effort to aid someone can create a ripple of positive change. My passion for learning and growth fuels my desire to continuously seek knowledge in every field, embracing my role as a lifelong learner. Whether I'm helping individuals or businesses, I strive to combine my dedication to personal growth with my commitment to making a positive difference in the lives of those around me.</p>
+        </section>
+        <section class="experience-skills">
+            <h2>Experience and Skills</h2>
+            <div class="centered-container">
+                <p>I recently graduated from NC State University with a double major in Marketing and Accounting. My diverse work experience includes:</p>
+                <ul class="centered-list">
+                    <li>Performing administrative tasks at law firms</li>
+                    <li>Contributing to local government campaigns</li>
+                    <li>Aiding my state's attorney general's office</li>
+                    <li>Collaborating with small businesses to develop websites and enhance brand awareness</li>
+                    <li>Improving marketing methods in the tech industry</li>
+                </ul>
+            </div>
+    <p>Each experience has yielded the adoption of my vast skill set. As, I have had the opportunity to expand my knowledge base by conducting <strong>market research</strong>, cultivating <strong>data analytics</strong>, and optimizing <strong>search engine rankings.</strong> Overall, I am passionate about leveraging my unique skills to drive business success and am eager to contribute my expertise to new and exciting challenges!</p>
+    
+    </main>
+    <footer>
+        "Failure is success in progress" — Albert Einstein
+    </footer>
+
+    <!-- Popup and Overlay -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <button class="popup-close" id="popup-close">&times;</button>
+        <div class="popup-content">
+            <h1>Why So Blank?</h1>
+            <p>I purposefully cultivated a site that represents a <strong>"blank canvas."</strong> I believe that we, as individuals, have the ability to <strong>create anything</strong> out of what appears to be <strong>"nothing."</strong> As you read more about me, I hope you gain a curious perspective and discover the flexible nature of what the future has to offer!</p>
+        </div>
+    </div>
+
+     <!-- Popup and Overlay -->
+     <div class="overlay" id="overlay"></div>
+     <div class="popup" id="popup">
+         <button class="popup-close" id="popup-close">&times;</button>
+         <div class="popup-content">
+             <h1>Why So Blank?</h1>
+             <p>I purposefully cultivated a site that represents a <strong>"blank canvas."</strong> I believe that we, as individuals, have the ability to <strong>create anything</strong> out of what appears to be <strong>"nothing."</strong> As you read more about me, I hope you gain a curious perspective and discover the flexible nature of what the future has to offer!</p>
+         </div>
+     </div>
+ 
+     <script>
+         // JavaScript to show the popup after 3 seconds
+         window.onload = function () {
+             setTimeout(function () {
+                 document.getElementById('popup').style.display = 'block';
+                 document.getElementById('overlay').style.display = 'block';
+             }, 3000); // 3000 milliseconds = 3 seconds
+         };
+ 
+         // JavaScript to close the popup
+         document.getElementById('popup-close').onclick = function () {
+             document.getElementById('popup').style.display = 'none';
+             document.getElementById('overlay').style.display = 'none';
+         };
+ 
+         // Close the popup when clicking outside of it
+         document.getElementById('overlay').onclick = function () {
+             document.getElementById('popup').style.display = 'none';
+             document.getElementById('overlay').style.display = 'none';
+         };
+     </script>
+</body>
+</html>
